@@ -305,6 +305,31 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return arrayList;
     }
+
+    public ArrayList<foods> getAllfData() {
+
+        ArrayList<foods> arrayList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(" SELECT *  FROM "+ UserMaster.FOOD_TABLE,null);
+
+
+        while (cursor.moveToNext()) {
+            String fid = cursor.getString(0);
+            String fsid = cursor.getString(1);
+            String fname = cursor.getString(2);
+            String fprice = cursor.getString(3);
+            byte[] img = cursor.getBlob(4);
+
+            foods fd = new foods(fid, fsid, fname, fprice, img);
+
+            arrayList.add(fd);
+        }
+        return arrayList;
+
     }
+
+
+}
 
 

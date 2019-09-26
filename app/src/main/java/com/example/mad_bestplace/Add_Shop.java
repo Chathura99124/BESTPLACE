@@ -178,11 +178,22 @@ public class Add_Shop extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_shopfeed) {
-            // Handle the camera action
-        } else if (id == R.id.nav_foodSearch) {
+        if (id == R.id.nav_shopfeed){
+
+            Intent intent = new Intent(Add_Shop.this,User_Feed.class);
+
+            intent.putExtra("user",User_Feed.USER);
+            startActivity(intent);
 
         } else if (id == R.id.nav_addshop) {
+            Intent intent = new Intent(Add_Shop.this,Add_Shop.class);
+            startActivity(intent);
+
+
+        }else if (id == R.id.nav_foodSearch) {
+            Intent intent = new Intent(Add_Shop.this,food_feed.class);
+            startActivity(intent);
+
 
         } else if (id == R.id.nav_tools) {
 
@@ -192,6 +203,8 @@ public class Add_Shop extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 
     public void AddShop() {
         add.setOnClickListener(

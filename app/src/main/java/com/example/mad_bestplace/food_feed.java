@@ -51,6 +51,7 @@ public class food_feed extends AppCompatActivity {
 
         search = (SearchView) findViewById(R.id.searchView);
 
+
         search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -62,13 +63,15 @@ public class food_feed extends AppCompatActivity {
 
                 searchdata(newText);
                 return false;
+
             }
+
         });
 
-        if (USER.equals("Customers")){
+        loaddata(Shop_ID);
 
-        }else if (USER.equals("shop")){
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -83,12 +86,12 @@ public class food_feed extends AppCompatActivity {
                 }
             });
 
-            loaddata(Shop_ID);
+
         }
 
 
 
-    }
+
 
     private void searchdata(String newText) {
 
@@ -108,6 +111,14 @@ public class food_feed extends AppCompatActivity {
     public void loaddata(String sid){
 
         list = dbHelper.getAllfoodData(sid);
+        adapter = new food_adapter(this,list);
+        listView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
+    }
+    public void loadalldata(){
+
+        list = dbHelper.getAllfData();
         adapter = new food_adapter(this,list);
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();

@@ -1,5 +1,6 @@
 package com.example.mad_bestplace;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -85,11 +86,22 @@ public class Shop_Update extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_shopfeed) {
-            // Handle the camera action
-        } else if (id == R.id.nav_foodSearch) {
+        if (id == R.id.nav_shopfeed){
+
+            Intent intent = new Intent(Shop_Update.this,User_Feed.class);
+
+            intent.putExtra("user",User_Feed.USER);
+            startActivity(intent);
 
         } else if (id == R.id.nav_addshop) {
+            Intent intent = new Intent(Shop_Update.this,Add_Shop.class);
+            startActivity(intent);
+
+
+        }else if (id == R.id.nav_foodSearch) {
+            Intent intent = new Intent(Shop_Update.this,food_feed.class);
+            startActivity(intent);
+
 
         } else if (id == R.id.nav_tools) {
 

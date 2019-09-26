@@ -37,7 +37,7 @@ public class User_Feed extends AppCompatActivity
     ArrayList <shops> list;
     shop_adapter adapter = null;
     DBHelper dbHelper = new DBHelper(this);
-    String USER;
+    public static String USER;
     SearchView search;
 
     @Override
@@ -184,10 +184,20 @@ public class User_Feed extends AppCompatActivity
 
         if (id == R.id.nav_shopfeed){
 
-            Intent redirect_add_shop = new Intent(User_Feed.this,food_feed.class);
-            startActivity(redirect_add_shop);
+            Intent intent = new Intent(User_Feed.this,User_Feed.class);
+
+            intent.putExtra("user",USER);
+            startActivity(intent);
 
         } else if (id == R.id.nav_addshop) {
+            Intent intent = new Intent(User_Feed.this,Add_Shop.class);
+            startActivity(intent);
+
+
+        }else if (id == R.id.nav_foodSearch) {
+            Intent intent = new Intent(User_Feed.this,food_feed.class);
+            startActivity(intent);
+
 
         } else if (id == R.id.nav_tools) {
 

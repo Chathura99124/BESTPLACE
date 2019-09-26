@@ -67,7 +67,7 @@ public class Update_delete_shop extends AppCompatActivity
         Intent thisIntent = getIntent();
         Shop_ID = thisIntent.getStringExtra("ShopID");
 
-        Toast.makeText(Update_delete_shop.this,Shop_ID, Toast.LENGTH_LONG).show();
+
 
 
 
@@ -174,17 +174,24 @@ public class Update_delete_shop extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_shopfeed){
+
+            Intent intent = new Intent(Update_delete_shop.this,User_Feed.class);
+
+            intent.putExtra("user",User_Feed.USER);
+            startActivity(intent);
 
         } else if (id == R.id.nav_addshop) {
+            Intent intent = new Intent(Update_delete_shop.this,Add_Shop.class);
+            startActivity(intent);
+
+
+        }else if (id == R.id.nav_foodSearch) {
+            Intent intent = new Intent(Update_delete_shop.this,food_feed.class);
+            startActivity(intent);
+
 
         } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
