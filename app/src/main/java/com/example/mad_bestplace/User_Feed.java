@@ -184,7 +184,7 @@ public class User_Feed extends AppCompatActivity
 
         if (id == R.id.nav_shopfeed){
 
-            Intent redirect_add_shop = new Intent(User_Feed.this,Add_Shop.class);
+            Intent redirect_add_shop = new Intent(User_Feed.this,food_feed.class);
             startActivity(redirect_add_shop);
 
         } else if (id == R.id.nav_addshop) {

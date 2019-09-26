@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@drawable/background_picture"
     tools:context=".food_feed"
     tools:showIn="@layout/activity_food_feed">
 

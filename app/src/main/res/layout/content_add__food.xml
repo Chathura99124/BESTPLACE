@@ -59,10 +59,10 @@
 
     <Button
         android:id="@+id/imgbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="41dp"
+        android:layout_height="42dp"
         android:layout_marginTop="180dp"
-        android:text="add image"
+        android:background="@drawable/ic_menu_gallery"
         app:layout_constraintStart_toStartOf="@+id/foodviwe"
         app:layout_constraintTop_toTopOf="@+id/foodviwe" />
 
